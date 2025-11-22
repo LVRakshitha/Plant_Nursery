@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
-import Features from "./components/Features";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Plants from "./components/location";
@@ -16,8 +15,6 @@ export default function App() {
       <section id="home">
         <Slider />
       </section>
-
-      <Features />
 
       <section id="about">
         <About />

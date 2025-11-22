@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import slide1 from "../assets/images/plant15.jpeg";
 import slide2 from "../assets/images/plant14.jpeg";
 import slide3 from "../assets/images/plant13.jpeg";
+import SatyaNurseryChat from "./chat";
 
 const slides = [
   {
@@ -26,6 +27,8 @@ const slides = [
 
 export default function Slider() {
   const [index, setIndex] = useState(0);
+
+  const [openChat, setOpenChat] = useState(false);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -96,7 +99,7 @@ export default function Slider() {
 
           .caption button {
             padding: 12px 25px;
-            background-color: #4CAF50;
+            background-color: #1f6220ff;
             color: white;
             border: none;
             border-radius: 8px;
@@ -106,13 +109,8 @@ export default function Slider() {
           }
 
           .caption button:hover {
-            background-color: #45a049;
+            background-color: #1f6220ff;
             transform: scale(1.05);
-          }
-
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
           }
 
           .prev, .next {
@@ -166,63 +164,68 @@ export default function Slider() {
             transform: scale(1.2);
           }
 
-          /* 🌿 Responsive Styles */
-          @media (max-width: 1024px) {
-            .caption h2 {
-              font-size: 2.3rem;
-            }
-            .caption p {
-              font-size: 1rem;
-            }
+          .chat-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #1f6220ff;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s ease;
           }
 
-          @media (max-width: 768px) {
-            .slider {
-              height: 75vh;
-              border-radius: 15px;
-            }
-            .caption {
-              bottom: 12%;
-              left: 6%;
-              max-width: 90%;
-            }
-            .caption h2 {
-              font-size: 2rem;
-            }
-            .caption p {
-              font-size: 0.9rem;
-            }
-            .caption button {
-              font-size: 0.9rem;
-              padding: 10px 20px;
-            }
-            .prev, .next {
-              width: 40px;
-              height: 40px;
-              font-size: 20px;
-            }
+          .chat-icon:hover {
+            transform: scale(1.1);
           }
 
-          @media (max-width: 480px) {
-            .slider {
-              height: 60vh;
-              border-radius: 10px;
-            }
-            .caption h2 {
-              font-size: 1.6rem;
-            }
-            .caption p {
-              font-size: 0.85rem;
-            }
-            .caption button {
-              padding: 8px 18px;
-              font-size: 0.8rem;
-            }
-            .prev, .next {
-              width: 35px;
-              height: 35px;
-              font-size: 18px;
-            }
+          .chat-icon img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+          }
+
+          .chat-popup {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 420px;
+            height: 580px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            overflow: hidden;
+            z-index: 10000;
+            animation: popupAnim 0.3s ease;
+          }
+
+          .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10001;
+            color: #444;
+          }
+
+          @keyframes popupAnim {
+            from { transform: scale(0.6); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+          }
+
+
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
           }
         `}
       </style>
@@ -237,7 +240,6 @@ export default function Slider() {
               <img src={slide.image} alt={`Slide ${i}`} />
               <div className="overlay"></div>
 
-              {/* ✨ Caption Overlay */}
               <div className="caption">
                 <h2>{slide.title}</h2>
                 <p>{slide.subtitle}</p>
@@ -260,6 +262,20 @@ export default function Slider() {
           ))}
         </div>
       </div>
+
+      {openChat && (
+      <div className="chat-popup">
+        <SatyaNurseryChat />
+        <button className="close-btn" onClick={() => setOpenChat(false)}>×</button>
+      </div>
+)}
+
+
+      <div className="chat-icon" onClick={() => setOpenChat(true)}>
+        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="Chat" />
+      </div>
+
+
     </>
   );
 }

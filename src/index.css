@@ -1,6 +1,4 @@
-/* ============================
-   GLOBAL STYLES
-============================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +11,12 @@ body {
   color: #333;
 }
 
-
-/* ============================
-   NAVBAR
-============================ */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: #2e7d32;
+  background: #1f6220ff;
   color: white;
   position: sticky;
   top: 0;
@@ -46,9 +40,6 @@ body {
 }
 
 
-/* ============================
-   SLIDER
-============================ */
 .slider {
   position: relative;
   width: 100%;
@@ -87,36 +78,6 @@ body {
 }
 
 
-/* ============================
-   FEATURES SECTION
-============================ */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 50px 0;
-  flex-wrap: wrap;
-}
-
-.feature-btn {
-  background-color: #3cb371;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.feature-btn:hover {
-  background-color: #2e8b57;
-}
-
-
-/* ============================
-   ABOUT SECTION
-============================ */
 .about {
   text-align: center;
   padding: 60px 20px;
@@ -125,7 +86,7 @@ body {
 
 .about h2 {
   font-size: 2em;
-  color: #2f8f2f;
+  color: #1f6220ff;
   margin-bottom: 20px;
 }
 
@@ -136,10 +97,9 @@ body {
   margin: auto;
 }
 
-
-/* ============================
-   GALLERY
-============================ */
+.chat-container{
+  margin-top: 10px;
+}
 .gallery-section {
   padding: 50px 20px;
   text-align: center;
@@ -148,7 +108,7 @@ body {
 .gallery-title {
   font-size: 2.3rem;
   margin-bottom: 25px;
-  color: #2f8f2f;
+  color: #1f6220ff;
 }
 
 .gallery-grid {
@@ -169,7 +129,6 @@ body {
   transform: scale(1.05);
 }
 
-/* FULL SCREEN SLIDER */
 .fullscreen-slider {
   width: 100%;
   height: 100vh !important;
@@ -183,7 +142,6 @@ body {
   object-fit: cover;
 }
 
-/* SLIDER BUTTONS */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -200,49 +158,7 @@ body {
 .prev { left: 20px; }
 .next { right: 20px; }
 
-/* FLOATING CHATBOT BUTTON */
-.chatbot-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #2e7d32;
-  color: white;
-  border: none;
-  font-size: 30px;
-  padding: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0px 5px 12px rgba(0,0,0,0.3);
-  z-index: 200;
-}
 
-/* FLOATING VOICE BUTTON */
-.voice-btn {
-  position: fixed;
-  bottom: 95px;
-  right: 25px;
-  background: #3cb371;
-  color: white;
-  border: none;
-  font-size: 28px;
-  padding: 17px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0px 5px 12px rgba(0,0,0,0.3);
-  z-index: 200;
-}
-
-.chatbot-btn:hover,
-.voice-btn:hover {
-  opacity: 0.85;
-}
-
-
-
-
-/* ============================
-   RESPONSIVE DESIGN
-============================ */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -257,8 +173,4 @@ body {
     height: 50vh;
   }
 
-  .features {
-    flex-direction: column;
-    gap: 20px;
-  }
 }

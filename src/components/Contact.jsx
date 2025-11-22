@@ -1,14 +1,11 @@
-// ContactUs.jsx
 import React from 'react';
 
 const ContactUs = () => {
-  // Contact details (customize as needed)
   const address = "AL 1, Jail Road, Hari Nagar Delhi 110064";
   const phone = "+91-123-456-7890"; // Replace with your actual phone
   const email = "info@yourwebsite.com"; // Replace with your actual email
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
-  // Inline styles (same as Location for consistency)
   const contactStyle = {
     textAlign: 'center',
     padding: '60px 20px',
@@ -18,7 +15,7 @@ const ContactUs = () => {
 
   const h2Style = {
     fontSize: '2em',
-    color: '#2f8f2f',
+    color: '#1f6220ff',
     marginBottom: '20px'
   };
 

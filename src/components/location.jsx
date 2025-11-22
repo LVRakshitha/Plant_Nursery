@@ -1,8 +1,6 @@
-// Plants.jsx
 import React from 'react';
 
 const Plants = () => {
-  // List of 6 indoor plants with details (customize images, descriptions, and Amazon links as needed)
   const plants = [
     {
       name: "Snake Plant",
@@ -42,7 +40,6 @@ const Plants = () => {
     }
   ];
 
-  // Inline styles for consistency with your other components
   const plantsStyle = {
     textAlign: 'center',
     padding: '60px 20px',
@@ -52,7 +49,7 @@ const Plants = () => {
 
   const h2Style = {
     fontSize: '2em',
-    color: '#539e53ff',
+    color: '#1f6220ff',
     marginBottom: '20px'
   };
 
@@ -83,7 +80,7 @@ const Plants = () => {
     display: 'inline-block',
     marginTop: '10px',
     padding: '10px 15px',
-    backgroundColor: '#2f8f2f',
+    backgroundColor: '#1f6220ff',
     color: '#fff',
     textDecoration: 'none',
     borderRadius: '4px'

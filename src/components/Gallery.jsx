@@ -1,6 +1,5 @@
 import React from "react";
 
-// Import images from your images folder
 import plant1 from "../assets/images/plant4.jpeg";
 import plant2 from "../assets/images/plant5.jpeg";
 import plant3 from "../assets/images/plant6.jpeg";
@@ -17,7 +16,7 @@ import plant12 from "../assets/images/plant1.jpeg";
 export default function Gallery() {
   const images = [
     plant1, plant2, plant3, plant4, plant5,
-    plant6, plant7, plant8, plant9, plant10
+    plant6, plant7, plant8, plant9, plant10,plant11, plant12
   ];
 
   return (

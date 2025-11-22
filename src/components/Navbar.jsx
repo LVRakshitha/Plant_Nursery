@@ -13,7 +13,7 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false); // Close menu after clicking
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -44,45 +44,45 @@ export default function Navbar() {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px; /* Increased padding for more space */
-            padding-bottom: 25px; /* Increased bottom padding */
-            background: linear-gradient(135deg, #4CAF50, #81C784); /* Attractive green gradient background */
+            padding: 15px 30px;
+            padding-bottom: 25px;
+            background: linear-gradient(135deg, #1f6220ff, #1f6220ff);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 2px solid #388E3C; /* Subtle border for definition */
+            border-bottom: 2px solid #1f6220ff;
           }
           .navbar.scrolled {
-            background: linear-gradient(135deg, #388E3C, #66BB6A); /* Darker gradient on scroll */
+            background: linear-gradient(135deg, #1f6220ff, #1f6220ff);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
           }
           .logo {
-            font-size: 26px; /* Slightly larger for prominence */
+            font-size: 26px;
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.3s, color 0.3s;
-            color: #FFFFFF; /* White text for contrast on green background */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+            color: #FFFFFF;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
           }
           .logo:hover {
             transform: scale(1.1);
-            color: #FFD700; /* Gold on hover for attractiveness */
+            color: #FFD700;
           }
           .hamburger {
             display: none;
             background: none;
             border: none;
-            font-size: 28px; /* Larger icon */
+            font-size: 28px;
             cursor: pointer;
             transition: transform 0.3s, color 0.3s;
             color: #FFFFFF;
           }
           .hamburger:hover {
             transform: rotate(90deg);
-            color: #FFD700;
+            color: #77a636ff;
           }
           .nav-links {
             display: flex;
@@ -92,28 +92,28 @@ export default function Navbar() {
             transition: transform 0.3s ease-in-out;
           }
           .nav-links li {
-            margin-left: 25px; /* More spacing between links */
+            margin-left: 25px;
           }
           .nav-links a {
             text-decoration: none;
-            color: #FFFFFF; /* White text */
-            font-weight: 600; /* Bolder font */
-            padding: 8px 15px; /* More padding for buttons */
-            border-radius: 8px; /* Rounded corners */
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           }
           .nav-links a:hover {
-            background-color: #FFD700; /* Gold hover */
-            color: #388E3C; /* Green text on hover */
-            transform: translateY(-2px); /* Lift effect */
+            background-color: #FFD700;
+            color: #1f6220ff;
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
           }
           .nav-links a.active {
-            background-color: #FFD700; /* Gold for active */
-            color: #388E3C;
+            background-color: #FFD700;
+            color: #1f6220ff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
           }
           .nav-links a::after {
@@ -122,7 +122,7 @@ export default function Navbar() {
             bottom: -5px;
             left: 50%;
             width: 0;
-            height: 3px; /* Thicker underline */
+            height: 3px;
             background-color: #FFD700;
             transition: width 0.3s, left 0.3s;
             border-radius: 2px;
@@ -143,12 +143,12 @@ export default function Navbar() {
               top: 100%;
               left: 0;
               width: 100%;
-              background: linear-gradient(135deg, #4CAF50, #81C784); /* Matching gradient */
+              background: linear-gradient(135deg, #037105ff, #036005ff);
               padding: 15px 0;
               box-shadow: 0 4px 8px rgba(0,0,0,0.2);
               transform: translateY(-100%);
               opacity: 0;
-              border-top: 2px solid #388E3C;
+              border-top: 2px solid #1f6220ff;
             }
             .nav-links.open {
               display: flex;
@@ -166,11 +166,14 @@ export default function Navbar() {
           }
         `}
       </style>
+
       <nav className={`navbar ${window.scrollY > 50 ? 'scrolled' : ''}`}>
         <div className="logo" onClick={() => scrollToSection('home')}>🌿 पौधा by Satya Nursery</div>
+
         <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
           ☰
         </button>
+
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li><a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</a></li>
           <li><a href="#chat" className={activeSection === 'chat' ? 'active' : ''} onClick={() => scrollToSection('chat')}>Chat</a></li>
